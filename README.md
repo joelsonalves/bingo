@@ -1,1 +1,1 @@
-# bingo.github.io
+# https://joelsonalves.github.io/bingo
