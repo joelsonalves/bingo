@@ -4,5 +4,5 @@ body {
 }
 
 header#cabecalho-principal {
-    
+  border-radius: 0;
 }
