@@ -1,41 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <title>Bingo!</title>
-  <link rel="stylesheet" href="css/main.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Bingo!</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <div class="container-fluid p-0">
-    <header id="cabecalho-principal" class="jumbotron bg-dark text-white mb-0">
-      <h1 class="text-center">Bingo!</h1>
-    </header>
-    <nav class="navbar navbar-expand navbar-dark bg-dark sticky-top justify-content-center">
-      <!-- Links -->
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">&Jopf;ogo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">&Copf;artela</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">&Aopf;juda</a>
-        </li>
-      </ul>
-    </nav>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br>
-  </div>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <div id="page-body" class="container-fluid p-0">
+        <header id="page-header" class="jumbotron jumbotron-fluid mb-0">
+            <h1 class="text-center">Bingo!</h1>
+        </header>
+        <nav id="page-nav" class="navbar navbar-expand navbar-dark bg-dark sticky-top justify-content-center">
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link font-weight-bold" href=".">Jogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#">Cartela</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#">Ajuda</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="page-content"> 
+            <div id="sorteio" class="container-fluid p-3">
+                <div class="d-flex row align-items-center">
+                    <div class="d-none col-6 pt-3 text-right">
+                        <div id="ultima-bola-sorteada" class="d-inline-block text-primary"><span class="bola-letra">B</span><span class="bola-numero">01<span></div>
+                    </div>
+                    <div class="col pt-3 text-center">   
+                        <button id="botao-sortear" type="button" class="btn btn-primary p-2 pl-3 pr-3 font-weight-bold"><span class="d-none spinner-grow spinner-grow-sm"></span> Sortear</button>
+                    </div>
+                </div>
+            </div>
+            <div id="bolas-sorteadas" class="container-fluid p-3">
+                <div class="row">
+                    <h1 class="col-12 p-3 text-center font-weight-bold">&#8601;&#8601; Bolas Sorteadas &#8600;&#8600;</h1>
+                </div>
+                <div class="row pt-3 pb-3 text-primary"> 
+                    <div id="mensagem-nenhuma-bola" class="col-12 text-center">Clique em <b>"Sortear"</b> para iniciar o Jogo!</div>
+                    <div id="bola-b-01" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">01</span></div>
+                    <div id="bola-b-02" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">02</span></div>
+                    <div id="bola-b-03" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">03</span></div>
+                    <div id="bola-b-04" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">04</span></div>
+                    <div id="bola-b-05" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">05</span></div>
+                    <div id="bola-b-06" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">06</span></div>
+                    <div id="bola-b-07" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">07</span></div>
+                    <div id="bola-b-08" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">08</span></div>
+                    <div id="bola-b-09" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">09</span></div>
+                    <div id="bola-b-10" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">10</span></div>
+                    <div id="bola-b-11" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">11</span></div>
+                    <div id="bola-b-12" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">12</span></div>
+                    <div id="bola-b-13" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">13</span></div>
+                    <div id="bola-b-14" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">14</span></div>
+                    <div id="bola-b-15" class="d-none col-1 bola bola-b text-center"><span class="bola-letra">B</span><span class="bola-numero">15</span></div>
+                    <div id="bola-i-16" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">16</span></div>
+                    <div id="bola-i-17" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">17</span></div>
+                    <div id="bola-i-18" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">18</span></div>
+                    <div id="bola-i-19" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">19</span></div>
+                    <div id="bola-i-20" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">20</span></div>
+                    <div id="bola-i-21" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">21</span></div>
+                    <div id="bola-i-22" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">22</span></div>
+                    <div id="bola-i-23" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">23</span></div>
+                    <div id="bola-i-24" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">24</span></div>
+                    <div id="bola-i-25" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">25</span></div>
+                    <div id="bola-n-26" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">26</span></div>
+                    <div id="bola-n-27" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">27</span></div>
+                    <div id="bola-n-28" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">28</span></div>
+                    <div id="bola-n-29" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">29</span></div>
+                    <div id="bola-n-30" class="d-none col-1 bola bola-i text-center"><span class="bola-letra">I</span><span class="bola-numero">30</span></div>
+                    <div id="bola-n-31" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">31</span></div>
+                    <div id="bola-n-32" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">32</span></div>
+                    <div id="bola-n-33" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">33</span></div>
+                    <div id="bola-n-34" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">34</span></div>
+                    <div id="bola-n-35" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">35</span></div>
+                    <div id="bola-n-36" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">36</span></div>
+                    <div id="bola-n-37" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">37</span></div>
+                    <div id="bola-n-38" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">38</span></div>
+                    <div id="bola-n-39" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">39</span></div>
+                    <div id="bola-n-40" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">40</span></div>
+                    <div id="bola-n-41" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">41</span></div>
+                    <div id="bola-n-42" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">42</span></div>
+                    <div id="bola-n-43" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">43</span></div>
+                    <div id="bola-n-44" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">44</span></div>
+                    <div id="bola-n-45" class="d-none col-1 bola bola-n text-center"><span class="bola-letra">N</span><span class="bola-numero">45</span></div>
+                    <div id="bola-g-46" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">46</span></div>
+                    <div id="bola-g-47" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">47</span></div>
+                    <div id="bola-g-48" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">48</span></div>
+                    <div id="bola-g-49" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">49</span></div>
+                    <div id="bola-g-50" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">50</span></div>
+                    <div id="bola-g-51" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">51</span></div>
+                    <div id="bola-g-52" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">52</span></div>
+                    <div id="bola-g-53" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">53</span></div>
+                    <div id="bola-g-54" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">54</span></div>
+                    <div id="bola-g-55" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">55</span></div>
+                    <div id="bola-g-56" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">56</span></div>
+                    <div id="bola-g-57" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">57</span></div>
+                    <div id="bola-g-58" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">58</span></div>
+                    <div id="bola-g-59" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">59</span></div>
+                    <div id="bola-g-60" class="d-none col-1 bola bola-g text-center"><span class="bola-letra">G</span><span class="bola-numero">60</span></div>
+                    <div id="bola-o-61" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">61</span></div>
+                    <div id="bola-o-62" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">62</span></div>
+                    <div id="bola-o-63" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">63</span></div>
+                    <div id="bola-o-64" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">64</span></div>
+                    <div id="bola-o-65" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">65</span></div>
+                    <div id="bola-o-66" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">66</span></div>
+                    <div id="bola-o-67" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">67</span></div>
+                    <div id="bola-o-68" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">68</span></div>
+                    <div id="bola-o-69" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">69</span></div>
+                    <div id="bola-o-70" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">70</span></div>
+                    <div id="bola-o-71" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">71</span></div>
+                    <div id="bola-o-72" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">72</span></div>
+                    <div id="bola-o-73" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">73</span></div>
+                    <div id="bola-o-74" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">74</span></div>
+                    <div id="bola-o-75" class="d-none col-1 bola bola-o text-center"><span class="bola-letra">O</span><span class="bola-numero">75</span></div>
+                </div>
+                <div class="row">
+                    <h1 class="col-12 p-3 text-center font-weight-bold">&#8598;&#8598; Bolas Sorteadas &#8599;&#8599;</h1>
+                </div>
+            </div>
+        </div>
+        <footer id="page-footer" class="jumbotron jumbotron-fluid mb-0">
+            <p class="text-center">Desenvolvido por Joelson Alves</p>
+        </footer>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,7 +1,75 @@
-body {
-  
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,423;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,423;1,500;1,600;1,700&display=swap');
+
+div#page-body {
+    font-family: 'Roboto Mono', monospace;
 }
 
-header#cabecalho-principal {
-  border-radius: 0;
+header#page-header {
+    background-color: aquamarine;
 }
+
+header#page-header h1 {
+    
+}
+
+nav#page-nav {
+    font-size: 14pt;
+}
+
+div#page-content {
+    background-color: lemonchiffon;
+}
+
+div#page-content div#sorteio {
+    
+}
+
+div#page-content div#sorteio div#ultima-bola-sorteada {
+    font-size: 48pt;
+}
+
+div#page-content div#sorteio div#botao-sortear {
+    
+}
+
+div#page-content div#bolas-sorteadas div h1 {
+    font-size: 14pt;
+    background-image: linear-gradient(to right, #eee, #bbb);
+}
+
+.bola {
+    text-align: center;
+}
+
+.bola-letra {
+    
+}
+
+.bola-numero {
+    font-weight: bold;
+}
+
+.bola-b {
+    
+}
+
+.bola-i {
+    
+}
+
+.bola-n {
+   
+}
+
+.bola-g {
+    
+}
+
+.bola-o {
+    
+}
+
+footer#page-footer {
+    background-color: orange;
+}
+
