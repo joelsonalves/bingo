@@ -20,8 +20,8 @@ div#page-content {
     background-color: lemonchiffon;
 }
 
-div#page-content div#sorteio {
-    
+div#page-content div#sorteio button {
+    font-size: 14pt;
 }
 
 div#page-content div#sorteio div#ultima-bola-sorteada {
@@ -34,7 +34,7 @@ div#page-content div#sorteio div#botao-sortear {
 
 div#page-content div#bolas-sorteadas div h1 {
     font-size: 14pt;
-    background-image: linear-gradient(to right, #eee, #bbb);
+    background-color: yellowgreen;
 }
 
 .bola {
