@@ -144,17 +144,8 @@
                     if (!is_executando) {
                         is_executando = true;
                         document.getElementById('botao-sortear-spinner').classList.remove('d-none');
-                        document.getElementById('botao-sortear-texto').innerHTML = 'Aguarde (5)';
-                        await new Promise(r => setTimeout(r, 1000));
-                        document.getElementById('botao-sortear-texto').innerHTML = 'Aguarde (4)';
-                        await new Promise(r => setTimeout(r, 1000));
-                        document.getElementById('botao-sortear-texto').innerHTML = 'Aguarde (3)';
-                        await new Promise(r => setTimeout(r, 1000));
-                        document.getElementById('botao-sortear-texto').innerHTML = 'Aguarde (2)';
-                        await new Promise(r => setTimeout(r, 1000));
-                        document.getElementById('botao-sortear-texto').innerHTML = 'Aguarde (1)';
-                        await new Promise(r => setTimeout(r, 1000));
-                        document.getElementById('botao-sortear-texto').innerHTML = 'Aguarde (0)';
+                        document.getElementById('botao-sortear-texto').innerHTML = 'Aguarde';
+                        await new Promise(r => setTimeout(r, 5000));
                         var num = getRandomIntInclusive(0, bolas_disponiveis.length - 1);
                         var bola_sorteada = bolas_disponiveis[num];
                         bolas_disponiveis.splice(num, 1);
