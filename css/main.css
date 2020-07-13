@@ -29,8 +29,8 @@ div#page-content div#sorteio div#ultima-bola-sorteada {
 }
 
 div#page-content div#bolas-sorteadas div h1 {
-    font-size: 14pt;
-    background-color: yellowgreen;
+    font-size: 12pt;
+    background-image: linear-gradient(to right, lemonchiffon, #555, lemonchiffon);
 }
 
 .bola {
