@@ -8,11 +8,7 @@ header#page-header {
     background-color: aquamarine;
 }
 
-header#page-header h1 {
-    
-}
-
-nav#page-nav {
+header#page-header nav#page-nav {
     font-size: 14pt;
 }
 
@@ -25,11 +21,7 @@ div#page-content div#sorteio button {
 }
 
 div#page-content div#sorteio div#ultima-bola-sorteada {
-    font-size: 48pt;
-}
-
-div#page-content div#sorteio div#botao-sortear {
-    
+    font-size: 60pt;
 }
 
 div#page-content div#bolas-sorteadas div h1 {
@@ -38,7 +30,7 @@ div#page-content div#bolas-sorteadas div h1 {
 }
 
 .bola {
-    text-align: center;
+    
 }
 
 .bola-letra {
@@ -46,7 +38,7 @@ div#page-content div#bolas-sorteadas div h1 {
 }
 
 .bola-numero {
-    font-weight: bold;
+    
 }
 
 .bola-b {
@@ -70,6 +62,6 @@ div#page-content div#bolas-sorteadas div h1 {
 }
 
 footer#page-footer {
-    background-color: orange;
+    
 }
 
