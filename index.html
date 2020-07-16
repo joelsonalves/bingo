@@ -25,22 +25,19 @@
                     </li>
                 </ul>
             </nav>
-        <div id="page-content" class="mb-5"> 
-            <div id="sorteio" class="container-fluid p-3">
+        <div id="page-content" class="container-fluid"> 
+            <div id="sorteio" class="p-3">
                 <div class="d-flex row align-items-center">
-                    <div id="sorteio-bola" class="d-none col pt-3 text-right">
+                    <div id="sorteio-bola" class="d-none col-12 text-center">
                         <div id="ultima-bola-sorteada" class="d-inline-block text-primary"><span class="bola-letra">B</span><span class="bola-numero font-weight-bold">01</span></div>
-                    </div>
-                    <div id="sorteio-botao" class="col pt-3 text-center">   
-                        <button id="botao-sortear" type="button" class="btn btn-primary p-2 pl-3 pr-3 font-weight-bold" onclick="sortear()"><span id="botao-sortear-spinner" class="d-none spinner-grow spinner-grow-sm"></span> <span id="botao-sortear-texto">Sortear</span></button>
                     </div>
                 </div>
             </div>
-            <div id="bolas-sorteadas" class="container-fluid p-3">
+            <div id="bolas-sorteadas" class="d-none p-3">
                 <div class="row">
                     <h1 class="col-12 p-3 text-white text-center font-weight-bold">Confira as Bolas Sorteadas</h1>
                 </div>
-                <div class="row pt-3 text-primary"> 
+                <div class="row text-primary"> 
                     <div id="mensagem-nenhuma-bola" class="col-12 text-center pb-3">Clique em <b>"Sortear"</b> para iniciar o Jogo!</div>
                     <div id="b01" class="d-none col-sm-1 col-2 bola bola-b text-center pb-3"><span class="bola-letra">B</span><span class="bola-numero font-weight-bold">01</span></div>
                     <div id="b02" class="d-none col-sm-1 col-2 bola bola-b text-center pb-3"><span class="bola-letra">B</span><span class="bola-numero font-weight-bold">02</span></div>
@@ -120,9 +117,21 @@
                 </div>
             </div>
         </div>
-        <footer id="page-footer" class="container-fluid bg-dark text-white p-3 mb-0 fixed-bottom">
-            <p class="text-center mb-0">Desenvolvido por Joelson Alves</p>
-        </footer>
+        <div class="fixed-bottom">
+            <div class="container-fluid row">
+                <div class="col">
+                    <div id="sorteio-imagem" class="col-12 text-center">
+                        <img src="img/globo_bingo.png" alt="Globo de Bingo" width="300">
+                    </div>
+                    <div id="sorteio-botao" class="col-12 p-5 text-center">   
+                        <button id="botao-sortear" type="button" class="btn btn-primary font-weight-bold" onclick="sortear()"><span id="botao-sortear-spinner" class="d-none spinner-grow spinner-grow-sm"></span><span id="botao-sortear-texto">Sortear</span></button>
+                    </div>
+                </div>
+            </div>
+            <footer id="page-footer" class="container-fluid bg-dark text-white p-3 mb-0">
+                <p class="text-center mb-0">Desenvolvido por Joelson Alves</p>
+            </footer>
+        </div>
         <script type="text/javascript">
             var bolas_disponiveis = [
                 'b01', 'b02', 'b03', 'b04', 'b05', 'b06', 'b07', 'b08', 'b09', 'b10', 'b11', 'b12', 'b13', 'b14', 'b15',
@@ -144,7 +153,7 @@
                     if (!is_executando) {
                         is_executando = true;
                         document.getElementById('botao-sortear-spinner').classList.remove('d-none');
-                        document.getElementById('botao-sortear-texto').innerHTML = 'Aguarde';
+                        document.getElementById('botao-sortear-texto').innerHTML = ' Aguarde';
                         await new Promise(r => setTimeout(r, 5000));
                         var num = getRandomIntInclusive(0, bolas_disponiveis.length - 1);
                         var bola_sorteada = bolas_disponiveis[num];
@@ -155,9 +164,9 @@
                         document.getElementById(bola_sorteada).classList.remove('d-none');
                         if (is_primeira_execucao) {
                             is_primeira_execucao = false;
+                            document.getElementById('sorteio-imagem').classList.add('d-none');
                             document.getElementById('sorteio-bola').classList.remove('d-none');
-                            document.getElementById('sorteio-botao').classList.remove('text-center');
-                            document.getElementById('sorteio-botao').classList.add('text-left');
+                            document.getElementById('bolas-sorteadas').classList.remove('d-none');
                         }
                         placar++;
                         if (placar == 1) {
