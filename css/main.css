@@ -18,10 +18,12 @@ header#page-header nav#page-nav {
 
 div#page-content {
     background-color: lemonchiffon;
+    
+    overflow-y: auto;
 }
 
-div#page-content div#sorteio button {
-    font-size: 14pt;
+div#page-content div#sorteio div#sorteio-imagem {
+    
 }
 
 div#page-content div#sorteio div#ultima-bola-sorteada {
@@ -63,6 +65,10 @@ div#page-content div#bolas-sorteadas div h1 {
 
 .bola-o {
     
+}
+
+div#sorteio button {
+    font-size: 14pt;
 }
 
 footer#page-footer p {
