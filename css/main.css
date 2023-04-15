@@ -17,7 +17,7 @@ header#page-header nav#page-nav {
 }
 
 div#page-content {
-    background-color: lemonchiffon;
+    background-color: #eee;
     
     overflow-y: auto;
 }
