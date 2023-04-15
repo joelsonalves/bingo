@@ -36,7 +36,7 @@ div#page-content div#sorteio div#ultima-bola-sorteada {
 
 div#page-content div#bolas-sorteadas div h1 {
     font-size: 12pt;
-    background-image: linear-gradient(to right, var(--main-bg-color) #555, var(--main-bg-color));
+    background-image: linear-gradient(to right, var(--main-bg-color), #555, var(--main-bg-color));
 }
 
 .bola {
